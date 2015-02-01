@@ -1,0 +1,23 @@
+---
+galaxy_info:
+  author: Alex Punco
+  description: Install oracle java from ppa repo
+  company: asgard lab
+  license: license GPLv2
+  min_ansible_version: 1.2
+
+  platforms:
+  - name: Ubuntu
+    versions:
+    - precise
+    - trusty
+  - name: Debian
+    versions:
+    - wheezy
+
+  categories:
+  - development
+  - packaging
+  - system
+dependencies: []
+  
