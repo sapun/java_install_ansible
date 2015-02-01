@@ -1,12 +1,9 @@
 ---
 # tasks file for java-install-from-repo
 - name: ensure required packages are installed for Java 7
-  apt: name=$item state=latest update_cache=yes
-  with_items:
-    - python-software-properties
-
-- name: Add Java repository to sources
-  action: apt_repository repo='ppa:webupd8team/java'
+  apt_repository:
+    repo:     'ppa:webupd8team/java'
+    update_cache: yes
 
 - name: Autoaccept license for Java
   action: shell echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
