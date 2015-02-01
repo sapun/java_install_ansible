@@ -14,7 +14,7 @@ Example Playbook
 
     - hosts: servers
       roles:
-         - { role: sapun.java-install }
+         - { role: sapun.java_install }
 
 License
 -------
@@ -24,4 +24,4 @@ GPLv2
 Author Information
 ------------------
 
-Author Alexander Punco
+Author [Alexander Punco](http://github.com/sapun)
