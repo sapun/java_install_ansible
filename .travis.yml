@@ -27,15 +27,8 @@ script:
   # Run the role/playbook with ansible-playbook.
   - "ansible-playbook -i tests/inventory tests/$SITE --connection=local --sudo"
 
-  # Run the role/playbook again, checking to make sure it's idempotent.
-  - >
-    ansible-playbook -i tests/inventory tests/$SITE --connection=local --sudo
-    | grep -q 'changed=0.*failed=0'
-    && (echo 'Idempotence test: pass' && exit 0)
-    || (echo 'Idempotence test: fail' && exit 1)
 
-
-  # Check to make sure we can connect to MySQL via Unix socket.
+  # Check java installed
   - >
     java -version 2>&1 |grep '1.7' 
     && (echo 'Installed test : pass' && exit 0)
