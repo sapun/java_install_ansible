@@ -30,6 +30,6 @@ script:
 
   # Check java installed
   - >
-    java -version 2>&1 |grep '1.7' 
+    java -version 2>&1 |grep '1.8' 
     && (echo 'Installed test : pass' && exit 0)
     || (echo 'installed test: fail' && exit 1)
