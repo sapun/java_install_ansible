@@ -11,7 +11,7 @@
 
 - name: Autoaccept license for Java
   shell: echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
-  when: resutl.stdout == "true"
+  when: result.stdout != "true"
 
 - name: Update APT package cache
   apt: update_cache=yes
