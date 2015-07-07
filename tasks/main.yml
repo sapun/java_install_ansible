@@ -5,8 +5,13 @@
     repo:     'ppa:webupd8team/java'
     update_cache: yes
 
+- name: Check accepted license
+  shell: debconf-show oracle-java8-installer | grep accepted-oracle-license-v1-1 | cut -d ':' -f 2 | sed 's/ //'
+  register: result
+
 - name: Autoaccept license for Java
   shell: echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
+  when: resutl.stdout == "true"
 
 - name: Update APT package cache
   apt: update_cache=yes
